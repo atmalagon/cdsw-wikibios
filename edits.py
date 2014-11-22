@@ -5,17 +5,25 @@ from operator import itemgetter
 
 figure = pyplot.figure()
 
+# sort the data about female articles by the first edit date.
 rows_female_by_firstedit = sorted(wikibios.rows_female, key=itemgetter('firstedit'))
+
+# create empty lists, which we will fill with the median first edit dates and
+# the average number of edits.
 firstedit_female_medians = []
 mean_edits_female_by_firstedit = []
 N = 1000
 i = 0
 while i + N <= len(rows_female_by_firstedit):
+	# take a chunk of the sorted data N rows long.
 	chunk = rows_female_by_firstedit[i:i+N]
 	i = i + N
 
+	# append the median value to the holder list.
 	firstedit_female_medians.append(chunk[N / 2]['firstedit'])
 
+	# find the average number of edits by first counting
+	# the total number of edits and then dividing by N
 	total_edits = 0.0
 	for row in chunk:
 		total_edits = total_edits + row['edits']

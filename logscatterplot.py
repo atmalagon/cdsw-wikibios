@@ -3,6 +3,8 @@ import wikibios
 from matplotlib import pyplot
 
 figure = pyplot.figure()
+
+# get the current axes
 axes = figure.gca()
 
 firstedits_male = wikibios.columns_male['firstedit']
