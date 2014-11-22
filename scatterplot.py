@@ -8,12 +8,14 @@ axes = figure.gca()
 
 firstedits_male = wikibios.columns_male['firstedit']
 birth_years_male = wikibios.columns_male['birth_year']
-axes.scatter(firstedits_male, birth_years_male, alpha=0.1, c='green', linewidths=(0,), label='Male')
+axes.scatter(firstedits_male, birth_years_male, alpha=0.1, c='green', edgecolors='None', label='Male')
 
 firstedits_female = wikibios.columns_female['firstedit']
 birth_years_female = wikibios.columns_female['birth_year']
-axes.scatter(firstedits_female, birth_years_female, alpha=0.1, c='orange', linewidths=(0,), label='Female')
+axes.scatter(firstedits_female, birth_years_female, alpha=0.1, c='orange', edgecolors='None', label='Female')
 axes.set_xlabel('Article Date')
 axes.set_ylabel('Birth Year')
 axes.legend()
+
 figure.savefig('scatter.png')
+
